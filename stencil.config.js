@@ -1,5 +1,6 @@
 exports.config = {
   bundles: [
+    { components: ['bu-box'] },
     { components: ['bu-button'] }
   ]
 };

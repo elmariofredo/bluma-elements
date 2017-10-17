@@ -4,6 +4,33 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
+import { BuBox as BuBox } from './components/bu-box/bu-box';
+
+interface HTMLBuBoxElement extends BuBox, HTMLElement {
+}
+declare var HTMLBuBoxElement: {
+  prototype: HTMLBuBoxElement;
+  new (): HTMLBuBoxElement;
+};
+declare global {
+  interface HTMLElementTagNameMap {
+      "bu-box": HTMLBuBoxElement;
+  }
+  interface ElementTagNameMap {
+      "bu-box": HTMLBuBoxElement;
+  }
+  namespace JSX {
+      interface IntrinsicElements {
+          "bu-box": JSXElements.BuBoxAttributes;
+      }
+  }
+  namespace JSXElements {
+      export interface BuBoxAttributes extends HTMLAttributes {
+        
+      }
+  }
+}
+
 import { BuButton as BuButton } from './components/bu-button/bu-button';
 
 interface HTMLBuButtonElement extends BuButton, HTMLElement {
