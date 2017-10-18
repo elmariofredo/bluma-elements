@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "description": "Stencil App Starter",
+  "main": "dist/collection/index.js",
+  "types": "dist/collection/index.d.ts",
+  "browser": "dist/bulma.js",
+  "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
@@ -15,6 +19,7 @@
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
+    "@material/button": "^0.23.0",
     "@stencil/core": "next",
     "@stencil/router": "latest",
     "bulma": "^0.6.0"

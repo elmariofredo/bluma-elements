@@ -1,7 +1,10 @@
 exports.config = {
+  namespace: 'Bulma',
+  generateDistribution: true,
+  generateWWW: false,
   bundles: [
     { components: ['bu-box'] },
-    { components: ['bu-button'] }
+    { components: ['bu-button'] },
   ]
 };
 
