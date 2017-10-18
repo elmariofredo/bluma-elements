@@ -26,6 +26,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BuBoxAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
       }
   }
@@ -53,17 +55,48 @@ declare global {
   }
   namespace JSXElements {
       export interface BuButtonAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           type?: string,
           value?: string,
-          disabled?: boolean | "true" | "false",
+          disabled?: boolean,
           size?: string,
-          outlined?: boolean | "true" | "false",
-          inverted?: boolean | "true" | "false",
-          hovered?: boolean | "true" | "false",
-          focused?: boolean | "true" | "false",
-          active?: boolean | "true" | "false",
-          loading?: boolean | "true" | "false"
+          outlined?: boolean,
+          inverted?: boolean,
+          hovered?: boolean,
+          focused?: boolean,
+          active?: boolean,
+          loading?: boolean
+      }
+  }
+}
+
+import { MdButton as MdButton } from './components/md-button/md-button';
+
+interface HTMLMdButtonElement extends MdButton, HTMLElement {
+}
+declare var HTMLMdButtonElement: {
+  prototype: HTMLMdButtonElement;
+  new (): HTMLMdButtonElement;
+};
+declare global {
+  interface HTMLElementTagNameMap {
+      "md-button": HTMLMdButtonElement;
+  }
+  interface ElementTagNameMap {
+      "md-button": HTMLMdButtonElement;
+  }
+  namespace JSX {
+      interface IntrinsicElements {
+          "md-button": JSXElements.MdButtonAttributes;
+      }
+  }
+  namespace JSXElements {
+      export interface MdButtonAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
+        
       }
   }
 }
