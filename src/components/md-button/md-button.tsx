@@ -1,20 +1,25 @@
 import { Component, Element } from "@stencil/core";
 
-// TODO create type definitions
 import { MDCRipple } from "@material/ripple";
 
 @Component({
   tag: 'md-button',
-  styleUrl: 'md-button.scss'
+  styleUrl: 'md-button.scss',
+  shadow: true
 })
 export class MdButton {
 
 
   @Element() host: HTMLElement;
 
-  componentDidLoad() {
+  ripple: any
 
-    MDCRipple.attachTo(this.host.firstElementChild)
+  componentDidLoad() {
+    this.ripple = MDCRipple.attachTo(this.host.shadowRoot!.querySelector('.mdc-button'))
+  }
+
+  componentDidUnload() {
+    this.ripple.destroy()
   }
 
   render() {
